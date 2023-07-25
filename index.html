@@ -14,8 +14,32 @@
         <nav class="navbar bg-dark">
             <h1 class="header-style">Weather-Tracker</h1>
         </nav>
-        <!--setting up the header bar-->
-        
+        <!-- Search and Clear Button -->
+        <div class="row">
+            <div class="col-4 bg-light">
+                <div class="mt-2">Search for a City:</div>
+                <div class="input-group mb-3">
+                    <input type="text" id="city" class="form-control">
+                    <div class="input-group=append">
+                        <!-- Search button -->
+                        <button class="btn btn-primary" type="button" id="searchCity"><i class="fas fa-search"></i></button>
+                        <!-- Clear button -->
+                        <button class="btn btn-secondary" type="button" id="clear"><i class="fas fa-times-circle"></i></button>
+                    </div>
+                </div>
+                <!-- left column / list-->
+                <div class="list-group">
+                </div>
+                <div class="col-8">
+                    <div class="row p-2">
+                        <div class="card">
+                            <!-- main card -->
+                            <div class="card-body"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="./assets/script.js"></script>
 
