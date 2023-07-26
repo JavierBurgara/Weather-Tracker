@@ -26,7 +26,7 @@ for (i = 0; i < searchHistory.length; i++) {
     var city;
     var mainCard = $(".card-body");
     // prompt getItems
-    getItems()
+    getItems();
     // main card
     function getData() {
         // my api code
@@ -35,6 +35,17 @@ for (i = 0; i < searchHistory.length; i++) {
         $("#weeklyForecast").empty();
         // requests
         $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(reponse){
+            var date = moment().format("MM/DD/YYYY");
+            var iconCode = reponse.weather[0].icon;
+            var iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
+            var name = $("<h3>").html(city + date);
+            mainCard.prepend(name);
+            mainCard.append($("<img>").attr("src", iconURL));
+            var temp = Math.round((reponse.main.temp - 273.15) *1.80 + 32);
             
+
         })
-    }
+    };
