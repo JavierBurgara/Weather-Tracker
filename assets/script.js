@@ -23,3 +23,18 @@ for (i = 0; i < searchHistory.length; i++) {
         }
     };
     
+    var city;
+    var mainCard = $(".card-body");
+    // prompt getItems
+    getItems()
+    // main card
+    function getData() {
+        // my api code
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=8af713bebedab909ba40e0054699acdb" // call for city weather conditions
+        mainCard.empty();
+        $("#weeklyForecast").empty();
+        // requests
+        $.ajax({
+            
+        })
+    }
