@@ -22,3 +22,4 @@ for (i = 0; i < searchHistory.length; i++) {
     $(".list-group").append(cityListButton);
         }
     };
+    
