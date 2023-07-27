@@ -68,10 +68,37 @@ for (i = 0; i < searchHistory.length; i++) {
                     $("span").attr("class", "btn btn-outline-danger");
                 };
             });
+            // calls for 5 day forecast
             $.ajax({
                 url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=8af713bebedab909ba40e0054699acdb", // my api code
                 method: "GET"
-            })
+
+            }).then(function (response) {
+            for (i = 0; i < 5; i++) { // start for loop
+                // creates the columns
+                var newCard = $("<div>").attr("class", "col fiveDay bg-primary text-white rounded-lg p-2");
+                $("#weeklyForecast").append(newCard);
+                // uses moment for the date
+                var myDate = new Date(response.list[i * 8].dt * 1000);
+                // displays date
+                newCard.append($("<h4>").html(myDate.toLocaleDateString()));
+                // brings back the icon url suffix
+                var iconCode = response.list[i * 8].weather[0].icon;
+                // builds the icon URL
+                var iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
+                // displays the icon
+                newCard.append($("<img>").attr("src", iconURL));
+                // converts K and removes decimals using Math.round
+                var temp = Math.round((response.list[i * 8].main.temp - 273.15) * 1.80 + 32);
+                // displays temp
+                newCard.append($("<p>").html("Temp: " + temp + " &#8457")); //appends fahrenheit degrees using short key code
+                // creates a var for humidity from the response
+                var humidity = response.list[i * 8].main.humidity;
+                // displays humidity
+                newCard.append($("<p>").html("Humidity: " + humidity));
+                 }
+             })
         })
     };
+    
     
