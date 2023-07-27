@@ -68,5 +68,10 @@ for (i = 0; i < searchHistory.length; i++) {
                     $("span").attr("class", "btn btn-outline-danger");
                 };
             });
+            $.ajax({
+                url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=8af713bebedab909ba40e0054699acdb", // my api code
+                method: "GET"
+            })
         })
     };
+    
