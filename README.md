@@ -1,7 +1,9 @@
 # Weather-Tracker
 
 # Description
-
+How to use OpenWeather API to retrieve weather from several different cities in the United States.
+We use the OpenWeather API to retrieve Data from its weather to input what kind of weather conditions are going to happen in the next 5 days.
+This helps the users plan their next oncomings days to aviod any weather conditions that could effect their plans those next 5 days.
 # Installation
 HTML,CSS,JavaScript
 # Usage
